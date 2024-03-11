@@ -35,24 +35,24 @@ export const createImage = async (imgData) => {
     }
 }
 
-// // update a cat with id and body data
-// export const deleteCat = async (id, catData) => {
-//     try {
-//         const response = await api.put(`/cats/${id}`, catData);
-//         return response.data;
+// update(edit) an image with id and body data
+export const editImage = async (id, imgData) => {
+    try {
+        const response = await api.put(`/${id}`, imgData);
+        return response.data;
 
-//     } catch(error) {
-//         console.error("put cat", error);
-//     }
-// }
+    } catch(error) {
+        console.error("edit image sumthin wrong", error);
+    }
+}
 
-// // delete a cat with id 
-// export const editCat = async (id, catData) => {
-//     try {
-//         const response = await api.delete(`/cats/${id}`);
-//         return response.data;
+// delete a cat with id 
+export const deleteImage = async (id) => {
+    try {
+        const response = await api.delete(`/${id}`);
+        return response.data;
 
-//     } catch(error) {
-//         console.error("delete cat", error);
-//     }
-// }
+    } catch(error) {
+        console.error("delete image", error);
+    }
+}

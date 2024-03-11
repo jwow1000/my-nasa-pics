@@ -53,7 +53,7 @@ function ImageCreate() {
           className="input-ImageCreate"
 
         />
-        <input
+        <textarea 
           type="text"
           placeholder="Give us an indepth explanation"
           name="explanation"

@@ -28,6 +28,7 @@ function Image() {
   
   return (
     <div>
+      
       {
         (img.url) ? (
 
@@ -52,6 +53,7 @@ function Image() {
         : null
         
       }
+      <Link to={`/edit-image/${id}`} id="link-Image"> Edit this Image </Link>
     </div>
   )
 }

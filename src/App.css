@@ -92,6 +92,16 @@
     object-fit: scale-down;
 }
 
+/* ---------------- Image -------------------- */
+/* header */
+#link-Image {
+    text-align: center;
+    font-size: 3rem;
+}
+#link-Image:hover {
+    background-color: rgb(200,190,100);
+}
+
 /* style the video preview */
 .video-imageDetail {
     display: block;
@@ -108,3 +118,4 @@
     height: 100vh;
     
 }
+
