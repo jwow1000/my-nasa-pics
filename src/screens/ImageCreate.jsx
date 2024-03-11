@@ -33,15 +33,16 @@ function ImageCreate() {
   };
 
   return (
-    <div>
-      <h1>Add your own sick space image in our Database! please be nice 😬</h1>
-      <form onSubmit={handleSubmit}>
+    <div id="container-ImageCreate">
+      <h1 id="header-ImageCreate">Add your own sick space image in our Database! please be nice 😬</h1>
+      <form onSubmit={handleSubmit} id="form-ImageCreate">
         <input
           type="text"
           name="title"
           placeholder="Give us a short title"
           value={img.title}
           onChange={handleChange}
+          className="input-ImageCreate"
         />
         <input
           type="text"
@@ -49,6 +50,8 @@ function ImageCreate() {
           name="date"
           value={img.date}
           onChange={handleChange}
+          className="input-ImageCreate"
+
         />
         <input
           type="text"
@@ -56,6 +59,8 @@ function ImageCreate() {
           name="explanation"
           value={img.explanation}
           onChange={handleChange}
+          className="input-ImageCreate"
+
         />
         <input
           type="text"
@@ -63,9 +68,11 @@ function ImageCreate() {
           name="url"
           value={img.url}
           onChange={handleChange}
+          className="input-ImageCreate"
+
         />
         
-        <button type="submit">Submit your Image!</button>
+        <button type="submit" id="button-ImageCreate">Submit your Image!</button>
       </form>
     </div>
   );
