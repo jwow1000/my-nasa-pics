@@ -6,7 +6,6 @@ import api from './apiConfig.js';
 export const getImages = async () => {
     try {
         const response = await api.get("/");
-        console.log(response.data);
         return response.data;
 
     } catch(error) {
@@ -14,27 +13,27 @@ export const getImages = async () => {
     }
 }
 
-// // get one cat by id
-// export const getImage = async (id) => {
-//     try {
-//         const response = await api.get(`/${id}`);
-//         return response.data;
+// get one image by id
+export const getImage = async (id) => {
+    try {
+        const response = await api.get(`/${id}`);
+        return response.data;
 
-//     } catch(error) {
-//         console.error("Error Getting a Cat: ", error);
-//     }
-// }
+    } catch(error) {
+        console.error("Error Getting the Image: ", error);
+    }
+}
 
-// // create a cat with body data
-// export const createCat = async (catData) => {
-//     try {
-//         const response = await api.post(`/cats`, catData);
-//         return response.data;
+// create a cat with body data
+export const createImage = async (imgData) => {
+    try {
+        const response = await api.post(`/`, imgData);
+        return response.data;
 
-//     } catch(error) {
-//         console.error("post cat", error);
-//     }
-// }
+    } catch(error) {
+        console.error("posting new image", error);
+    }
+}
 
 // // update a cat with id and body data
 // export const deleteCat = async (id, catData) => {

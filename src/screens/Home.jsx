@@ -4,6 +4,7 @@ import ImagePreview from '../components/ImagePreview.jsx';
 import { useState, useEffect } from 'react';
 import { getImages } from "../services/pics.js";
 
+
 function Home() {
   // store images in useState array
   const [images, setImages] = useState([]);
@@ -20,7 +21,7 @@ function Home() {
 
   return (
     <div>
-      <h1>all the images!</h1>
+      <h1 id='header-Home'>Very Cool NASA Images</h1>
         <div id='images-container-Home'>
           {
             images.map( (item, i) => (
