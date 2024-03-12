@@ -5,7 +5,7 @@ import { Link, useParams} from "react-router-dom";
 import { motion } from "framer-motion"
 import "./Image.css";
 
-function Image() {
+function Image({ images, imgIndex, setImgIndex }) {
   const imgRef = useRef(null);
   
   // define object to fill image info
@@ -17,13 +17,19 @@ function Image() {
   // fetch the image data function
   const fetchImg = async () => {
     const one = await getImage(id);
+
+    const iIndex = images.findIndex((img) => {
+      return img._id === id
+    })
+
+    setImgIndex(iIndex)
     setImg(one);
   }
 
   // use effect trigger
   useEffect(() => {
     fetchImg();
-  }, []);
+  }, [id]);
   // -------------------------------- full screen stuff ----------------
   // define enter fullscreen function
   const enterFullscreen = () => {
@@ -65,7 +71,18 @@ function Image() {
     return embed ? embed : null;
 
   }
-  //  console.log('sephora', handleUtubeURL(img.url));
+  // handle previous Link
+  const imgScrub = (i, step) => {
+    let iOut = 0;
+    if( (i + step) > (images.length-1) ) {
+      iOut = 0;
+    } else if( (i + step) < 0 ) {
+      iOut = images.length-1;
+    } else {
+      iOut = i + step;
+    }
+    return iOut;
+  }
   
   
   return (
@@ -107,6 +124,13 @@ function Image() {
       <h3 className="text-Image" id="description-Image">{img.explanation}</h3>
    
       <Link to={`/edit-image/${id}`} id="link-Image"> Edit this Image </Link>
+      <Link id="prevButton-Image" to={`/image/${images[imgScrub(imgIndex, 1)]?._id}`}>
+        <button>Previous Image</button>
+      </Link>
+      <Link id="nextButton-Image" to={`/image/${images[imgScrub( imgIndex,  -1)]?._id}`}>
+        <button>Next Image</button>
+      </Link>
+     
     </div>
   )
 }

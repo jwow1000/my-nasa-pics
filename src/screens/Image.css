@@ -23,6 +23,18 @@
     rotate: 360deg;
 }
 
+#nextButton-Image {
+    position: fixed;
+    right: 1%;
+    bottom: 10%;
+}
+
+#prevButton-Image {
+    position: fixed;
+    left: 1%;
+    bottom: 10%;
+}
+
 /* style the video preview */
 .video-imageDetail {
     display: block;
