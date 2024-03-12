@@ -1,0 +1,29 @@
+/* ----- NavBar -------------- */
+#navContainer-Nav {
+    display: flex;
+    flex-flow: row;
+    gap: 4rem;
+    justify-content: center;
+    font-size: 1rem;
+    transition:
+        font-size 2s;
+        
+}
+
+#navContainer-Nav:hover {
+    font-size: 2.5rem;
+    
+}
+
+.link-Nav {
+    color:rgb(182, 225, 182);
+    font-weight: bold;
+    transition:
+        background-color 1s,
+        rotate 2s;
+    
+}
+.link-Nav:hover {
+    background-color: rgb(197, 136, 56);
+    
+}

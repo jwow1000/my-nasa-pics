@@ -3,6 +3,8 @@
 import ImagePreview from '../components/ImagePreview.jsx';
 import { useState, useEffect } from 'react';
 import { getImages } from "../services/pics.js";
+import { motion, AnimatePresence } from "framer-motion"
+
 
 
 function Home() {
@@ -22,13 +24,19 @@ function Home() {
   return (
     <div>
       <h1 id='header-Home'>Very Cool NASA Images</h1>
-        <div id='images-container-Home'>
+      <AnimatePresence>
+        <motion.div 
+          id='images-container-Home'
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0 }} 
+        >
           {
             images.map( (item, i) => (
               <ImagePreview img={item} key={i}/>
             ))
           }
-        </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }

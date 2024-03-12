@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createImage } from "../services/pics.js";
+import "./ImageCreate.css";
 
 function ImageCreate() {
   // define empty object that fits the model
@@ -31,7 +32,7 @@ function ImageCreate() {
       [name]: value,
     }));
   };
-
+  
   return (
     <div id="container-ImageCreate">
       <h1 id="header-ImageCreate">Add your own sick space image in our Database! please be nice 😬</h1>
@@ -46,7 +47,7 @@ function ImageCreate() {
         />
         <input
           type="text"
-          placeholder="Insert date+time: YEAR-MONTH-DAY 24:00"
+          placeholder="Insert date+time: YYYY-MM-DD 24:00"
           name="date"
           value={img.date}
           onChange={handleChange}

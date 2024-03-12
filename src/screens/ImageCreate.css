@@ -24,6 +24,13 @@
     box-shadow: 0px 0px 4rem rgb(159, 73, 235);;
 }
 
+#explanation-ImageEdit {
+    width:50%;
+    height: 8rem;
+    margin: 0 auto;
+    
+}
+
 #header-ImageCreate {
     text-align: center;
 }

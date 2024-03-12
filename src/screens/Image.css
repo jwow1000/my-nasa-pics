@@ -1,0 +1,58 @@
+.text-Image {
+    text-align: center;
+    width:50%;
+    transform: translateX(50%);
+    color: aliceblue;
+    margin: 1rem;
+}
+
+#link-Image {
+    position: fixed;
+    right: 1%;
+    top: 1%;
+    text-align: center;
+    font-size: 3rem;
+    transition:
+        font-size 2s,
+        background-color 2s,
+        rotate 2s;
+}
+#link-Image:hover {
+    background-color: rgb(200,190,100);
+    font-size: 5rem;
+    rotate: 360deg;
+}
+
+/* style the video preview */
+.video-imageDetail {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    
+}
+/* style the image detail */
+.image-imageDetail {
+    display: block;
+    margin: 0 auto;
+    width: 80vw;
+    transition:
+        height 2s,
+        width 2s,
+        background-color 2s;
+        
+}
+
+span {
+    color: rgb(150,220,90);
+}
+#header-Image {
+    font-weight: bold;
+    color:rgb(150,220,90);
+    text-shadow: 0px 0px 25px rgb(246, 164, 49);
+}
+/* --------------- full screen style --------------------------- */
+.image-imageDetail:fullscreen {
+    background-color: rgb(86, 92, 93);
+    
+}

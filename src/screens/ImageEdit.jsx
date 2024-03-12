@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { editImage, deleteImage, getImage } from "../services/pics.js";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import "./ImageEdit.css";
 
 function ImageEdit() {
   // define empty object that fits the model
   const [img, setImg] = useState({});
   
-  // check control flow
-  const [deleteUsure, setDeleteUsure] = useState( false );
-  const [deleteGo, setDeleteGo] = useState( 0 );
- 
   // use params fo id
   let { id } = useParams();
 
@@ -49,37 +43,16 @@ function ImageEdit() {
   };
 
   // handle the delete button
-  const doDelete = async () => {
+  const handleDelete = async () => {
     await deleteImage(id);
     // nav back to home
     navigate("/");
   }
 
-  const handleDelete = () => {
-    if(!deleteUsure) setDeleteUsure(true);
-    if(deleteUsure) {
-        if(deleteGo === 1) {
-            doDelete();
-            setDeleteUsure(false);
-            setDeleteGo(0);
-        }
-        if(deleteGo === 2) {
-            setDeleteUsure(false);
-            setDeleteGo(0);
-        }
-    }
-  }
 
   return (
     <div id="container-ImageEdit">
-      {
-        (deleteUsure) ? (
-            <div> U SURE!?
-                <button onClick={setDeleteGo(1)}>yea</button>
-                <button onClick={setDeleteGo(2)}>no</button>
-            </div>
-        ) : null
-      }
+      
       <h1 id="header-ImageEdit">Edit this image in our Database! please be nice 😬</h1>
       <form onSubmit={handleSubmit} id="form-ImageEdit">
         <input
@@ -122,7 +95,18 @@ function ImageEdit() {
         <button type="submit" id="subButton-ImageEdit">Save Edits!</button>
         
       </form>
-      <button onClick={handleDelete} id="delButton-ImageEdit">Delete this whole thing</button>
+      <button 
+        id="delButton-ImageEdit" 
+        onClick={() => { 
+          if (window.confirm('U sure you want to delete this item?')) {
+            handleDelete();
+            
+          } else {
+            
+          }
+        } }
+      > Delete This Item</button>
+      
     </div>
   );
 }
