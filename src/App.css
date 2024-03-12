@@ -43,9 +43,9 @@ html{
 .imageContainer-imagePreview {
     width: 13rem;
     height: 13rem;
-    padding: 1vw 1vw;
+    padding: 0.5vw 0.5vw;
     box-shadow: 0px 0px 4rem rgb(159, 73, 235);
-    backdrop-filter: invert(60%); 
+    backdrop-filter: invert(40%); 
     display: flex;
     justify-content: center;
     

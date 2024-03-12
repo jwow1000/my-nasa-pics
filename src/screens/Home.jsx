@@ -31,7 +31,7 @@ function Home() {
           animate={{ opacity: 1, x: 0 }} 
         >
           {
-            images.map( (item, i) => (
+            images.toReversed().map( (item, i) => (
               <ImagePreview img={item} key={i}/>
             ))
           }
