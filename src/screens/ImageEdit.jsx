@@ -29,7 +29,7 @@ function ImageEdit() {
     e.preventDefault();
 
     await editImage(id, img);
-    navigate("/");
+    navigate(`/image/${id}`);
   };
 
   // handle state changes
