@@ -93,6 +93,8 @@ function Image() {
               src={ handleUtubeURL(img.url) }
               title={img.title} 
               className="video-imageDetail"
+              allowFullScreen="true"
+              frameBorder = "0"
             >
   
             </iframe>
